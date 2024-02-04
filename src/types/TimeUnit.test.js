@@ -14,6 +14,11 @@ describe("validateTimeUnit", () => {
     const [isValid, error] = validateTimeUnit(timeValues);
     expect(isValid).toBe(false);
     expect(error).toBe('No valid time unit found in "30x"');
+
+    const timeValues2 = ["2d", "3h", "30asdfasdfasdfm"];
+    const [isValid2, error2] = validateTimeUnit(timeValues2);
+    expect(isValid2).toBe(false);
+    expect(error2).toBe('No valid time unit found in "30asdfasdfasdfm"');
   });
 
   test("should return false and an error message for time values that cannot be parsed", () => {

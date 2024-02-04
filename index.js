@@ -1,4 +1,4 @@
-import { validateTimeUnit } from "./src/types/TimeUnit";
+const { validateTimeUnit } = require("./src/types/TimeUnit");
 
 /**
  * The GitLab spend directives.
