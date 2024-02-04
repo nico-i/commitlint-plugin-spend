@@ -15,8 +15,9 @@ jobs:
       - uses: actions/setup-node@v4
         with:
           node-version: 21
-      - run: npm ci
-      - run: npm test
+          cache: "pnpm"
+      - run: pnpm install
+      - run: pnpm test
 
   publish-npm:
     needs: build
@@ -27,7 +28,7 @@ jobs:
         with:
           node-version: 21
           registry-url: https://registry.npmjs.org/
-      - run: npm ci
-      - run: npm publish
+      - run: pnpm install
+      - run: pnpm publish
         env:
           NODE_AUTH_TOKEN: ${{secrets.NPM_TOKEN}}
