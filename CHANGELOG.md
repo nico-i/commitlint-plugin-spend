@@ -1,5 +1,13 @@
 # Changelog
 
+## [1.1.0](https://github.com/nico-i/commitlint-plugin-spend/compare/v1.0.1...v1.1.0) (2024-02-05)
+
+
+### Features
+
+* **devops:** added manual trigger of package publishing job ([04be2e9](https://github.com/nico-i/commitlint-plugin-spend/commit/04be2e92de764d1eebbbeb7080c55050474a62f1))
+* **doc:** create LICENSE ([5a9f419](https://github.com/nico-i/commitlint-plugin-spend/commit/5a9f419e40ea9fd9d75c50c09378a5ece9d16c22))
+
 ## 1.0.1 (2024-02-04)
 
 
