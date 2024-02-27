@@ -32,7 +32,7 @@
     "@commitlint/lint": ">=7.6.0"
   },
   "devDependencies": {
-    "@commitlint/core": "^18.6.0",
+    "@commitlint/core": "^19.0.0",
     "@types/node": "^20.11.16",
     "commitlint-plugin-spend": "link:",
     "husky": "^9.0.10",
