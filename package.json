@@ -1,6 +1,6 @@
 {
   "name": "commitlint-plugin-spend",
-  "version": "1.0.1",
+  "version": "1.1.0",
   "description": "A commitlint plugin that requires the GitLab /spend or /spend_time directive in commit messages",
   "main": "out/index.js",
   "type": "module",
