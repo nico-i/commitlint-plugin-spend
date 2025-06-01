@@ -25,7 +25,10 @@ import {
  * @param when The condition under which the rule applies.
  * @returns A tuple indicating whether the validation passed and an error message if it failed.
  */
-export const spendRule: SyncRule = (parsed, when) => {
+export const ensureCommitMsgHasValidSpendDirective: SyncRule = (
+  parsed,
+  when
+) => {
   if (when === "never") {
     return [true, undefined];
   }
@@ -102,10 +105,10 @@ export const spendRule: SyncRule = (parsed, when) => {
 
   for (const timeValue of timeValuesWithoutDate) {
     const numericPart = /^(\d+)/.exec(timeValue)?.[1]!;
-    const parsedNumericPart = parseInt(numericPart, 10);
+    const absoluteNumericValue = Math.abs(parseInt(numericPart, 10));
     const unitPart: TimeUnit = timeValue.replace(numericPart, "") as TimeUnit;
 
-    if (parsedNumericPart > maxValueByTimeUnit[unitPart]) {
+    if (absoluteNumericValue > maxValueByTimeUnit[unitPart]) {
       return [
         false,
         `The time value "${timeValue}" exceeds the maximum value for "${unitPart}" (max value: ${maxValueByTimeUnit[unitPart]})`,

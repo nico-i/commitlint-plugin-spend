@@ -1,7 +1,7 @@
-import { spendRule } from "./src/utils/SpendRule/SpendRule";
+import { ensureCommitMsgHasValidSpendDirective } from "./src/utils/ensureCommitMsgHasValidSpendDirective/ensureCommitMsgHasValidSpendDirective";
 
 export default {
   rules: {
-    spend: spendRule,
+    spend: ensureCommitMsgHasValidSpendDirective,
   },
 };
