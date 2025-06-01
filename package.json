@@ -34,8 +34,7 @@
     "url": "https://github.com/nico-i/commitlint-plugin-spend/issues"
   },
   "scripts": {
-    "build": "bun build ./index.ts --outdir ./out",
-    "test": "bun test --coverage",
+    "build": "bun test && bun build ./index.ts --outdir ./out",
     "prepare": "husky || true"
   },
   "peerDependencies": {

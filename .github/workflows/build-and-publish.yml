@@ -16,12 +16,13 @@ jobs:
     steps:
       - uses: actions/checkout@11bd71901bbe5b1630ceea73d27597364c9af683 # v4
       - uses: oven-sh/setup-bun@735343b667d3e6f658f44d0eca948eb6282f2b76 # v2
+      - uses: actions/setup-node@v4
+        with:
+          node-version: "v22.14.0"
+          registry-url: 'https://registry.npmjs.org'
       - name: Install dependencies (Cache hit will skip actual installation)
         run: |
           bun install --frozen-lockfile
-      - name: Run tests
-        run: |
-          bun test
       - name: Build package
         run: |
           bun run build
@@ -29,6 +30,6 @@ jobs:
         # only run this step if it's a release or a manual trigger
         if: github.event_name == 'release' || github.event_name == 'workflow_dispatch'
         run: |
-          bun publish --access public
+          npm publish --provenance --access public
         env:
-          NPM_CONFIG_TOKEN: ${{secrets.NPM_TOKEN}}
+          NODE_AUTH_TOKEN: ${{ secrets.NPM_TOKEN }}
