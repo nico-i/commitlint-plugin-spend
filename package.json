@@ -2,7 +2,8 @@
   "name": "commitlint-plugin-spend",
   "version": "1.0.1",
   "description": "A commitlint plugin that requires the GitLab /spend or /spend_time directive in commit messages",
-  "main": "index.js",
+  "main": "out/index.js",
+  "type": "module",
   "keywords": [
     "commitlint",
     "commitlintplugin",
@@ -25,17 +26,21 @@
     "url": "https://github.com/nico-i/commitlint-plugin-spend/issues"
   },
   "scripts": {
-    "test": "vitest run",
+    "build": "bun build ./index.ts --outdir ./out",
+    "test": "bun test --coverage",
     "prepare": "husky"
   },
   "peerDependencies": {
     "@commitlint/lint": ">=7.6.0"
   },
   "devDependencies": {
+    "@commitlint/cli": "^19.8.1",
+    "@commitlint/config-conventional": "^19.8.1",
     "@commitlint/core": "^18.6.0",
+    "@commitlint/types": "^19.8.1",
+    "@types/bun": "^1.2.15",
     "@types/node": "^20.11.16",
-    "commitlint-plugin-spend": "link:",
-    "husky": "^9.0.10",
-    "vitest": "^1.2.2"
-  }
+    "husky": "^9.0.10"
+  },
+  "private": true
 }
