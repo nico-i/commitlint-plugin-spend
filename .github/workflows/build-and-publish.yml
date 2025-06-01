@@ -18,7 +18,7 @@ jobs:
       - uses: oven-sh/setup-bun@735343b667d3e6f658f44d0eca948eb6282f2b76 # v2
       - name: Install dependencies (Cache hit will skip actual installation)
         run: |
-          bun install
+          bun install --frozen-lockfile
       - name: Run tests
         run: |
           bun test
@@ -31,4 +31,4 @@ jobs:
         run: |
           bun publish --access public
         env:
-          NODE_AUTH_TOKEN: ${{secrets.NPM_TOKEN}}
+          NPM_CONFIG_TOKEN: ${{secrets.NPM_TOKEN}}
