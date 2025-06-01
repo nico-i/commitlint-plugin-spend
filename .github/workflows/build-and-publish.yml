@@ -18,7 +18,7 @@ jobs:
       - uses: oven-sh/setup-bun@735343b667d3e6f658f44d0eca948eb6282f2b76 # v2
       - uses: actions/setup-node@v4
         with:
-          node-version: "v22.14.0"
+          node-version: "22.16.0"
           registry-url: 'https://registry.npmjs.org'
       - name: Install dependencies (Cache hit will skip actual installation)
         run: |
