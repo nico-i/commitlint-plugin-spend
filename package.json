@@ -28,7 +28,7 @@
   "homepage": "https://github.com/nico-i/commitlint-plugin-spend",
   "repository": {
     "type": "git",
-    "url": "https://github.com/nico-i/commitlint-plugin-spend.git"
+    "url": "git+https://github.com/nico-i/commitlint-plugin-spend.git"
   },
   "bugs": {
     "url": "https://github.com/nico-i/commitlint-plugin-spend/issues"

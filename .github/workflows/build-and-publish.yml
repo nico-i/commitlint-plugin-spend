@@ -13,13 +13,16 @@ jobs:
   test-build-publish:
     name: Test, Build, and Publish Node.js Package
     runs-on: ubuntu-latest
+    permissions:
+      contents: read
+      id-token: write
     steps:
       - uses: actions/checkout@11bd71901bbe5b1630ceea73d27597364c9af683 # v4
       - uses: oven-sh/setup-bun@735343b667d3e6f658f44d0eca948eb6282f2b76 # v2
       - uses: actions/setup-node@v4
         with:
           node-version: "v22.14.0"
-          registry-url: 'https://registry.npmjs.org'
+          registry-url: "https://registry.npmjs.org"
       - name: Install dependencies (Cache hit will skip actual installation)
         run: |
           bun install --frozen-lockfile
