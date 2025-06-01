@@ -62,17 +62,6 @@ describe(validateCommitMsg.name, () => {
     ]);
   });
 
-  it("should fail when the last time value is not a valid ISO date", () => {
-    const result = validateCommitMsg(
-      { ...mockCommit, body: "/spend 1mo 2022-13-01" },
-      "always"
-    );
-    expect(result).toEqual([
-      false,
-      `The last time value \"2022-13-01\" is neither a valid time value nor a valid ISO date string (YYYY-MM-DD)`,
-    ]);
-  });
-
   it("should fail when a time value exceeds the maximum allowed value", () => {
     const result = validateCommitMsg(
       { ...mockCommit, body: "/spend 99mo" },
@@ -108,7 +97,7 @@ describe(validateCommitMsg.name, () => {
 
   it("should pass for a valid spend directive", () => {
     const result = validateCommitMsg(
-      { ...mockCommit, body: "/spend 1mo 2w 3d 4h 5m 2022-08-26" },
+      { ...mockCommit, body: "/spend 1mo 2w 3d 4h 5m" },
       "always"
     );
     expect(result).toEqual([true, undefined]);

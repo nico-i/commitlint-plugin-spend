@@ -2,6 +2,8 @@
 
 [Commitlint](https://commitlint.js.org/) plugin to enforce the use of [spend directives](https://docs.gitlab.com/ee/user/project/quick_actions.html#issues-merge-requests-and-epics) in commit messages.
 
+Note: Purposefully does not support ISO date suffixes or negative time values, since they do now make sense in the context of a commit message.
+
 ## Available rules
 
 ### spend
@@ -61,13 +63,14 @@ feat: implement user authentication
 ```text
 fix: resolve database connection timeout
 
-/spend_time 1d 4h 2018-08-26
+/spend_time 1d 3h 15m
+```
 ```
 
 ```text
 refactor: optimize API response handling
 
-/spend -1mo 2w 3d 4h 5m
+/spend 1mo 2w 3d 4h 5m
 ```
 
 ### Invalid commit messages

@@ -66,25 +66,12 @@ export const validateCommitMsg: SyncRule = (parsed, when) => {
   const maybeTimeValues = spendLineSplit.slice(1);
 
   const timeValues: TimeValue[] = [];
-  let maybeDate: Date | null = null;
 
   // ensure that all strings are valid time values
   for (let i = 0; i < maybeTimeValues.length; i++) {
     const maybeTimeValue = maybeTimeValues[i]!;
 
     if (!isTimeValue(maybeTimeValue)) {
-      if (i === maybeTimeValues.length - 1) {
-        // If this is the last value and it isn't a time value, it could be an ISO date string
-        const date = new Date(maybeTimeValue);
-        if (isNaN(date.getTime())) {
-          return [
-            false,
-            `The last time value "${maybeTimeValue}" is neither a valid time value nor a valid ISO date string (YYYY-MM-DD)`,
-          ];
-        }
-        maybeDate = date;
-        continue;
-      }
       return [
         false,
         `The time value "${maybeTimeValue}" is not a valid time value. A time value must follow the RegEx pattern: ${timeValuePattern.source}`,
@@ -94,13 +81,9 @@ export const validateCommitMsg: SyncRule = (parsed, when) => {
     timeValues.push(maybeTimeValue);
   }
 
-  const timeValuesWithoutDate = maybeDate
-    ? timeValues.slice(0, -1)
-    : timeValues;
-
   const unsortedTimeUnits: TimeUnit[] = [];
 
-  for (const timeValue of timeValuesWithoutDate) {
+  for (const timeValue of timeValues) {
     const numericPart = /^(\d+)/.exec(timeValue)?.[1]!;
     const absoluteNumericValue = Math.abs(parseInt(numericPart, 10));
     const unitPart: TimeUnit = timeValue.replace(numericPart, "") as TimeUnit;
