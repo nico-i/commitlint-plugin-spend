@@ -48,6 +48,54 @@ bun add -d commitlint-plugin-spend
 }
 ```
 
+## Examples
+
+### Valid commit messages
+
+```text
+feat: implement user authentication
+
+/spend 2h 30m
+```
+
+```text
+fix: resolve database connection timeout
+
+/spend_time 1d 4h 2018-08-26
+```
+
+```text
+refactor: optimize API response handling
+
+/spend -1mo 2w 3d 4h 5m
+```
+
+### Invalid commit messages
+
+```text
+feat: implement user authentication
+
+/spend
+```
+
+*Error: Spend directive must contain at least one time value*
+
+```text
+fix: resolve database connection timeout
+
+/spend 25h 70m
+```
+
+*Error: The time value "25h" exceeds the maximum value for "h" (max value: 23)*
+
+```text
+refactor: optimize API response handling
+
+/spend 30m 2h 1d
+```
+
+*Error: Time values are not in the correct order. Time values must be ordered from largest to smallest unit*
+
 ## License
 
 [MIT](./LICENSE)

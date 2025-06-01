@@ -25,10 +25,7 @@ import {
  * @param when The condition under which the rule applies.
  * @returns A tuple indicating whether the validation passed and an error message if it failed.
  */
-export const ensureCommitMsgHasValidSpendDirective: SyncRule = (
-  parsed,
-  when
-) => {
+export const validateCommitMsg: SyncRule = (parsed, when) => {
   if (when === "never") {
     return [true, undefined];
   }

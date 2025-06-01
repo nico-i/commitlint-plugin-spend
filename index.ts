@@ -1,7 +1,7 @@
-import { ensureCommitMsgHasValidSpendDirective } from "./src/utils/ensureCommitMsgHasValidSpendDirective/ensureCommitMsgHasValidSpendDirective";
+import { validateCommitMsg } from "./src/utils/validateCommitMsg/validateCommitMsg";
 
 export default {
   rules: {
-    spend: ensureCommitMsgHasValidSpendDirective,
+    spend: validateCommitMsg,
   },
 };
