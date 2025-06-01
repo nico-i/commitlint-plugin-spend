@@ -4,6 +4,9 @@
   "description": "A commitlint plugin that requires the GitLab /spend or /spend_time directive in commit messages",
   "main": "out/index.js",
   "type": "module",
+  "publishConfig": {
+    "access": "public"
+  },
   "keywords": [
     "commitlint",
     "commitlintplugin",
@@ -41,6 +44,5 @@
     "@types/bun": "1.2.15",
     "@types/node": "22.15.29",
     "husky": "9.1.7"
-  },
-  "private": false
+  }
 }
