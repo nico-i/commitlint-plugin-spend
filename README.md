@@ -65,7 +65,6 @@ fix: resolve database connection timeout
 
 /spend_time 1d 3h 15m
 ```
-```
 
 ```text
 refactor: optimize API response handling
