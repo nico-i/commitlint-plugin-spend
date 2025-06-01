@@ -29,6 +29,6 @@ jobs:
         # only run this step if it's a release or a manual trigger
         if: github.event_name == 'release' || github.event_name == 'workflow_dispatch'
         run: |
-          bun publish --access public
+          bun publish --access public --tag ${{ github.event.release.tag_name }}
         env:
           NPM_CONFIG_TOKEN: ${{secrets.NPM_TOKEN}}
