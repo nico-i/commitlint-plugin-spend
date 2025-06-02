@@ -21,7 +21,7 @@ export type TimeValue = `${number}${TimeUnit}`;
  */
 export const timeValuePattern = new RegExp(
   `^(\\d{1,2})(${orderedTimeUnits.join(`|`)})$`,
-);
+) as RegExp;
 
 export function isTimeValue(value: string): value is TimeValue {
   return timeValuePattern.test(value);

@@ -8,7 +8,7 @@ export type SpendCommand = (typeof spendingCommands)[number];
 
 export const spendCommandPattern = new RegExp(
   `^(${spendingCommands.join(`|`)})$`,
-);
+) as RegExp;
 
 export function isSpendCommand(value: string): value is SpendCommand {
   return spendingCommands.includes(value as SpendCommand);

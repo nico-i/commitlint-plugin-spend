@@ -1,8 +1,10 @@
 import type { Plugin } from '@commitlint/types';
 import { validateCommitMsg } from './src/utils/validateCommitMsg/validateCommitMsg';
 
-export default {
+const spendPlugin: Plugin = {
   rules: {
     spend: validateCommitMsg,
   },
-} satisfies Plugin;
+};
+
+export default spendPlugin;
