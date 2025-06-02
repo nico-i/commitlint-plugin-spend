@@ -1,4 +1,4 @@
-import { orderedTimeUnits, type TimeUnit } from "../TimeUnit/TimeUnit";
+import { orderedTimeUnits, type TimeUnit } from '../TimeUnit/TimeUnit';
 
 /**
  * The maximum value for each time unit.
@@ -20,7 +20,7 @@ export type TimeValue = `${number}${TimeUnit}`;
  * Can optionally start with a negative sign for negative time values.
  */
 export const timeValuePattern = new RegExp(
-  `^(\\d{1,2})(${orderedTimeUnits.join("|")})$`
+  `^(\\d{1,2})(${orderedTimeUnits.join(`|`)})$`,
 );
 
 export function isTimeValue(value: string): value is TimeValue {

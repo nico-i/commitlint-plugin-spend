@@ -34,7 +34,9 @@
     "url": "https://github.com/nico-i/commitlint-plugin-spend/issues"
   },
   "scripts": {
-    "build": "bun test && bun build ./index.ts --outdir ./out",
+    "build": "bun build ./index.ts --outdir ./out --minify",
+    "lint": "eslint . --ext .ts && prettier . --check",
+    "lint:fix": "eslint . --ext .ts --fix && prettier . --write",
     "prepare": "husky || true"
   },
   "peerDependencies": {
@@ -45,8 +47,13 @@
     "@commitlint/config-conventional": "19.8.1",
     "@commitlint/core": "19.8.1",
     "@commitlint/types": "19.8.1",
+    "@nico-i/eslint-config": "2.7.0",
+    "@nico-i/prettier-config": "1.0.2",
     "@types/bun": "1.2.15",
     "@types/node": "22.15.29",
-    "husky": "9.1.7"
+    "eslint": "9.28.0",
+    "husky": "9.1.7",
+    "lint-staged": "16.1.0",
+    "prettier": "3.5.3"
   }
 }

@@ -80,7 +80,7 @@ feat: implement user authentication
 /spend
 ```
 
-*Error: Spend directive must contain at least one time value*
+_Error: Spend directive must contain at least one time value_
 
 ```text
 fix: resolve database connection timeout
@@ -88,7 +88,7 @@ fix: resolve database connection timeout
 /spend 25h 70m
 ```
 
-*Error: The time value "25h" exceeds the maximum value for "h" (max value: 23)*
+_Error: The time value "25h" exceeds the maximum value for "h" (max value: 23)_
 
 ```text
 refactor: optimize API response handling
@@ -96,7 +96,7 @@ refactor: optimize API response handling
 /spend 30m 2h 1d
 ```
 
-*Error: Time values are not in the correct order. Time values must be ordered from largest to smallest unit*
+_Error: Time values are not in the correct order. Time values must be ordered from largest to smallest unit_
 
 ## License
 

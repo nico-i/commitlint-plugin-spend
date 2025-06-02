@@ -19,6 +19,12 @@ jobs:
       - name: Install dependencies (Cache hit will skip actual installation)
         run: |
           bun install --frozen-lockfile
+      - name: Lint code
+        run: |
+          bun run lint
+      - name: Run tests
+        run: |
+          bun test
       - name: Build package
         run: |
           bun run build
