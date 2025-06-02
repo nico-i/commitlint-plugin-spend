@@ -2,7 +2,7 @@
 
 [Commitlint](https://commitlint.js.org/) plugin to enforce the use of [spend directives](https://docs.gitlab.com/ee/user/project/quick_actions.html#issues-merge-requests-and-epics) in commit messages.
 
-Note: Purposefully does not support ISO date suffixes or negative time values, since they do now make sense in the context of a commit message.
+Note: Purposefully does not support ISO date suffixes or negative time values, since they do not make sense in the context of a commit message.
 
 ## Available rules
 
