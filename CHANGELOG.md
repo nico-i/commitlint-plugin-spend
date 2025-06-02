@@ -1,5 +1,12 @@
 # Changelog
 
+## [1.2.0](https://github.com/nico-i/commitlint-plugin-spend/compare/v1.0.0...v1.2.0) (2025-06-02)
+
+
+### Miscellaneous Chores
+
+* release 1.2.0 ([f0b158b](https://github.com/nico-i/commitlint-plugin-spend/commit/f0b158b6774a8e74a68b21fb631af3e98ef061f4))
+
 ## [1.0.0](https://github.com/nico-i/commitlint-plugin-spend/compare/v1.2.0...v1.0.0) (2025-06-01)
 
 
