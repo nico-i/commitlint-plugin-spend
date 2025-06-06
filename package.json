@@ -50,7 +50,7 @@
     "@nico-i/eslint-config": "2.7.0",
     "@nico-i/prettier-config": "1.0.2",
     "@types/bun": "1.2.15",
-    "@types/node": "22.15.29",
+    "@types/node": "22.15.30",
     "eslint": "9.28.0",
     "husky": "9.1.7",
     "lint-staged": "16.1.0",
