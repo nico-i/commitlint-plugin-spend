@@ -58,7 +58,7 @@ describe(validateCommitMsg.name, () => {
     );
     expect(result).toEqual([
       false,
-      `The time value \"1x\" is not a valid time value. A time value must follow the RegEx pattern: ^(\\d{1,2})(y|mo|w|d|h|m)$`,
+      `The time value "1x" is not a valid time value. A time value must follow the RegEx pattern: ^(\\d{1,2})(y|mo|w|d|h|m)$`,
     ]);
   });
 
